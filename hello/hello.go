@@ -3,10 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	greetings := hello("Victor")
+	greetings := hello("Victor", "en")
 	fmt.Println(greetings)
 }
 
-func hello(name string) string {
-	return "Hello " + name
+func hello(name string, language string) string {
+	switch language {
+	case "en":
+		return "Hello " + name
+	case "es":
+		return "Hola " + name
+	case "fr":
+		return "Bonjour " + name
+	}
+	return "Wrong Language !"
 }
