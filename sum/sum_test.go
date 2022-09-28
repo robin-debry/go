@@ -7,9 +7,7 @@ func TestSum(t *testing.T) {
 		got := sum([]int{
 			1, 2, 3,
 		})
-		if got == 6 {
-			return
-		} else {
+		if got != 6 {
 			t.Error(" it's not 6")
 		}
 	})
@@ -17,9 +15,7 @@ func TestSum(t *testing.T) {
 		got := sum([]int{
 			1, 2,
 		})
-		if got == 3 {
-			return
-		} else {
+		if got != 3 {
 			t.Error(" it's not 3")
 		}
 	})
