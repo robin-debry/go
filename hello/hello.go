@@ -1,9 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello World")
+	greetings := hello("Karine")
+	fmt.Println(greetings)
+}
+
+func hello(name string) string {
+	return "Hello " + name
 }
