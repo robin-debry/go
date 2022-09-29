@@ -31,20 +31,26 @@ func TestArea(t *testing.T) {
 	})
 }
 func TestCircle_Perimeter(t *testing.T) {
-	c := Circle{
-		2.5,
-	}
-	c2 := Circle{
-		5.1,
-	}
-	got := c.Perimeter()
-	if got != 15.707963267948966 {
-		t.Error("not the good result, got :", got)
-	}
-	got2 := c2.Perimeter()
-	if got2 != 32.044245066615886 {
-		t.Error("not the good result, got :", got2)
-	}
+	t.Run("Area 2.5 and 5.1", func(t *testing.T) {
+		c := Circle{
+			2.5,
+		}
+		got := c.Perimeter()
+		if got != 15.707963267948966 {
+			t.Error("not the good result, got :", got)
+		}
+	})
+	t.Run("Area 2.5 and 5.1", func(t *testing.T) {
+		c := Circle{
+			5.1,
+		}
+		got := c.Perimeter()
+		if got != 32.044245066615886 {
+			t.Error("not the good result, got :", got)
+
+		}
+
+	})
 }
 func TestRectangle_Perimeter(t *testing.T) {
 	t.Run("perimeter 4 and 6", func(t *testing.T) {
