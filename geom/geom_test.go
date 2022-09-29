@@ -69,7 +69,24 @@ func TestRectangle_Perimeter(t *testing.T) {
 	})
 }
 
-func TestHexagone(t *testing.T) {
+func TestHexagone_Area(t *testing.T) {
+	h := Hexagone{
+		4,
+	}
+	h2 := Hexagone{
+		12,
+	}
+	got := h.Area()
+	if got != 41.569219381653056 {
+		t.Error("not the good result, got :", got)
+	}
+	got2 := h2.Area()
+	if got2 != 374.1229744348775 {
+		t.Error("not the good result, got :", got2)
+	}
+}
+
+func TestHexagone_Perimeter(t *testing.T) {
 	h := Hexagone{
 		4,
 	}
@@ -77,11 +94,11 @@ func TestHexagone(t *testing.T) {
 		12,
 	}
 	got := h.Perimeter()
-	if got != 41.569219381653056 {
+	if got != 24 {
 		t.Error("not the good result, got :", got)
 	}
 	got2 := h2.Perimeter()
-	if got2 != 374.1229744348775 {
+	if got2 != 72 {
 		t.Error("not the good result, got :", got2)
 	}
 }
