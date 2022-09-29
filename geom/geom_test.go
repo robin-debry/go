@@ -80,3 +80,15 @@ func TestPentagone_Perimeter(t *testing.T) {
 		}
 	})
 }
+
+func TestPentagoneArea(t *testing.T) {
+	t.Run("Area 5 ", func(t *testing.T) {
+		p := Pentagone{
+			5,
+		}
+		got := p.Perimeter()
+		if got != 25 {
+			t.Error("Area 5 is not 25")
+		}
+	})
+}
