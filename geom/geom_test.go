@@ -16,3 +16,17 @@ func TestPerimeter(t *testing.T) {
 		}
 	})
 }
+func TestArea(t *testing.T) {
+	t.Run("Area 3 and 5", func(t *testing.T) {
+		got := Area(3, 5)
+		if got != 15 {
+			t.Error("Area 3 and 5 is not 15")
+		}
+	})
+	t.Run("Area 3 and 4", func(t *testing.T) {
+		got := Area(3, 4)
+		if got != 12 {
+			t.Error("Area 3 and 4 is not 12")
+		}
+	})
+}
