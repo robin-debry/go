@@ -1,6 +1,8 @@
 package geom
 
-import "math"
+import (
+	"math"
+)
 
 func PerimeterRectangle(rect Rectangle) float64 {
 	return 20
@@ -55,6 +57,20 @@ func Perimeter(s Shape) float64 {
 	return s.Perimeter()
 }
 
+
+func (h Hexagone) Area() float64 {
+	return (3 * math.Sqrt(3) * h.width * h.width) / 2
+}
+
+func (h Hexagone) Perimeter() float64 {
+	return h.width * 6
+}
+
+type Hexagone struct {
+	width float64
+}
+
 func Area(s Shape) float64 {
 	return s.Area()
 }
+
