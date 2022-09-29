@@ -43,8 +43,7 @@ func (p Pentagone) Perimeter() float64 {
 }
 
 func (p Pentagone) Area() float64 {
-	perimeter := 5 * p.edge
-	return 0.5 * perimeter * p.apotheme
+	return 0.5 * p.Perimeter()* p.apotheme
 }
 
 type Shape interface {
