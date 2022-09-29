@@ -2,10 +2,7 @@ package geom
 
 import "math"
 
-// Area calculates the area of a width and a height given of a rectangle.
-func Area(width, height float64) float64 {
-	return width * height
-}
+
 
 func PerimeterRectangle(rect Rectangle) float64 {
 	return 20
@@ -20,6 +17,10 @@ type Rectangle struct {
 func (r Rectangle) Perimeter() float64 {
 	return (r.width + r.height) * 2
 }
+// Area calculates the area of a width and a height given of a rectangle.
+func (r Rectangle) Area() float64 {
+	return r.width * r.height
+}
 
 type Circle struct {
 	radius float64
@@ -29,10 +30,29 @@ func (c Circle) Perimeter() float64 {
 	return 2 * math.Pi * c.radius
 }
 
+func (c Rectangle) Area() float64 {
+	return c.radius * c.radius * math.Pi
+}
+
 type Shape interface {
 	Perimeter() float64
+	Area() float64
 }
 
 func Perimeter(s Shape) float64 {
 	return s.Perimeter()
 }
+
+func Area(s Shape)float64{
+	return s.Area()
+}
+
+
+type Pentagone struct{
+	edge float64
+}
+
+func (p Pentagone) Perimeter() float64{
+	return 5 * p.edge
+}
+
