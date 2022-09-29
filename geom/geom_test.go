@@ -59,7 +59,6 @@ func TestRectangle_Perimeter(t *testing.T) {
 	})
 }
 
-
 func TestHexagone_Area(t *testing.T) {
 	h := Hexagone{
 		4,
@@ -92,7 +91,7 @@ func TestHexagone_Perimeter(t *testing.T) {
 	if got2 != 72 {
 		t.Error("not the good result, got :", got2)
 	}
-
+}
 func TestPentagone_Perimeter(t *testing.T) {
 	t.Run("perimeter 5 ", func(t *testing.T) {
 		p := Pentagone{
