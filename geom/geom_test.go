@@ -30,3 +30,35 @@ func TestArea(t *testing.T) {
 		}
 	})
 }
+
+func TestPerimeterCircle(t *testing.T) {
+	got := PerimeterCircle(2.5)
+	if got != 15.707963267948966 {
+		t.Error("not the good result, got :", got)
+	}
+	got2 := PerimeterCircle(5.1)
+	if got2 != 32.044245066615886 {
+		t.Error("not the good result, got :", got2)
+	}
+}
+
+func TestPerimeterRectangle(t *testing.T) {
+	t.Run("perimeter 4 and 6", func(t *testing.T) {
+		r := Rectangle{
+			4, 6,
+		}
+		got := PerimeterRectangle(r)
+		if got != 20 {
+			t.Error("perimeter 4 and 6 is not 20")
+		}
+	})
+	t.Run("perimeter 7 and 9", func(t *testing.T) {
+		r := Rectangle{
+			7, 9,
+		}
+		got := PerimeterRectangle(r)
+		if got != 32 {
+			t.Error("perimeter 7 and 9 is not 32")
+		}
+	})
+}
