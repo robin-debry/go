@@ -30,7 +30,6 @@ func TestArea(t *testing.T) {
 		}
 	})
 }
-
 func TestCircle_Perimeter(t *testing.T) {
 	c := Circle{
 		2.5,
@@ -47,7 +46,6 @@ func TestCircle_Perimeter(t *testing.T) {
 		t.Error("not the good result, got :", got2)
 	}
 }
-
 func TestRectangle_Perimeter(t *testing.T) {
 	t.Run("perimeter 4 and 6", func(t *testing.T) {
 		r := Rectangle{
@@ -72,7 +70,7 @@ func TestRectangle_Perimeter(t *testing.T) {
 func TestPentagone_Perimeter(t *testing.T) {
 	t.Run("perimeter 5 ", func(t *testing.T) {
 		p := Pentagone{
-			5,
+			5,3,
 		}
 		got := p.Perimeter()
 		if got != 25 {
@@ -84,7 +82,7 @@ func TestPentagone_Perimeter(t *testing.T) {
 func TestPentagoneArea(t *testing.T) {
 	t.Run("Area 5 ", func(t *testing.T) {
 		p := Pentagone{
-			5,
+			5,3,
 		}
 		got := p.Perimeter()
 		if got != 25 {
