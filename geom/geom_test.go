@@ -4,13 +4,13 @@ import "testing"
 
 func TestPerimeter(t *testing.T) {
 	t.Run("perimeter 4 and 6", func(t *testing.T) {
-		got := Perimeter(4, 6)
+		got := Perimeter(Rectangle{4, 6})
 		if got != 20 {
 			t.Error("perimeter 4 and 6 is not 20")
 		}
 	})
 	t.Run("perimeter 7 and 9", func(t *testing.T) {
-		got := Perimeter(7, 9)
+		got := Perimeter(Rectangle{7, 9})
 		if got != 32 {
 			t.Error("perimeter 7 and 9 is not 32")
 		}
@@ -31,23 +31,29 @@ func TestArea(t *testing.T) {
 	})
 }
 
-func TestPerimeterCircle(t *testing.T) {
-	got := PerimeterCircle(2.5)
+func TestCircle_Perimeter(t *testing.T) {
+	c := Circle{
+		2.5,
+	}
+	c2 := Circle{
+		5.1,
+	}
+	got := c.Perimeter()
 	if got != 15.707963267948966 {
 		t.Error("not the good result, got :", got)
 	}
-	got2 := PerimeterCircle(5.1)
+	got2 := c2.Perimeter()
 	if got2 != 32.044245066615886 {
 		t.Error("not the good result, got :", got2)
 	}
 }
 
-func TestPerimeterRectangle(t *testing.T) {
+func TestRectangle_Perimeter(t *testing.T) {
 	t.Run("perimeter 4 and 6", func(t *testing.T) {
 		r := Rectangle{
 			4, 6,
 		}
-		got := PerimeterRectangle(r)
+		got := r.Perimeter()
 		if got != 20 {
 			t.Error("perimeter 4 and 6 is not 20")
 		}
@@ -56,7 +62,7 @@ func TestPerimeterRectangle(t *testing.T) {
 		r := Rectangle{
 			7, 9,
 		}
-		got := PerimeterRectangle(r)
+		got := r.Perimeter()
 		if got != 32 {
 			t.Error("perimeter 7 and 9 is not 32")
 		}
