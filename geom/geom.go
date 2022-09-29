@@ -1,8 +1,11 @@
 package geom
 
-func perimeter(nb1 int, nb2 int) int {
-	return (nb1 + nb2) * 2
+// Perimeter calculates the perimeter of a width and a height given of a rectangle.
+func Perimeter(width, height int) int {
+	return (width + height) * 2
 }
-func Area(nb1 int, nb2 int) int {
-	return nb1 * nb2
+
+// Area calculates the area of a width and a height given of a rectangle.
+func Area(width, height int) int {
+	return width * height
 }
