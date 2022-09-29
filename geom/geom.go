@@ -33,22 +33,19 @@ func (c Circle) Area() float64 {
 	return c.radius * c.radius * math.Pi
 }
 
-
-
-type Pentagone struct{
-	edge float64
+type Pentagone struct {
+	edge     float64
 	apotheme float64
 }
 
-func (p Pentagone) Perimeter() float64{
+func (p Pentagone) Perimeter() float64 {
 	return 5 * p.edge
 }
 
-func (p Pentagone) Area() float64{
+func (p Pentagone) Area() float64 {
 	perimeter := 5 * p.edge
 	return 0.5 * perimeter * p.apotheme
 }
-
 
 type Shape interface {
 	Perimeter() float64
@@ -62,5 +59,3 @@ func Perimeter(s Shape) float64 {
 func Area(s Shape) float64 {
 	return s.Area()
 }
-
-
