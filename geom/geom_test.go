@@ -76,9 +76,9 @@ func TestPentagoneArea(t *testing.T) {
 		p := Pentagone{
 			5, 3,
 		}
-		got := p.Perimeter()
-		if got != 25 {
-			t.Error("Area 5 is not 25")
+		got := p.Area()
+		if got != 37.5 {
+			t.Error("Area 5 is not 37.5")
 		}
 	})
 }
