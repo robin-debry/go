@@ -1,6 +1,8 @@
 package geom
 
-import "math"
+import (
+	"math"
+)
 
 // Area calculates the area of a width and a height given of a rectangle.
 func Area(width, height float64) float64 {
@@ -35,4 +37,12 @@ type Shape interface {
 
 func Perimeter(s Shape) float64 {
 	return s.Perimeter()
+}
+
+func (h Hexagone) Perimeter() float64 {
+	return (3 * math.Sqrt(3) * h.width * h.width) / 2
+}
+
+type Hexagone struct {
+	width float64
 }
