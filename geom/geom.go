@@ -39,8 +39,12 @@ func Perimeter(s Shape) float64 {
 	return s.Perimeter()
 }
 
-func (h Hexagone) Perimeter() float64 {
+func (h Hexagone) Area() float64 {
 	return (3 * math.Sqrt(3) * h.width * h.width) / 2
+}
+
+func (h Hexagone) Perimeter() float64 {
+	return h.width * 6
 }
 
 type Hexagone struct {
