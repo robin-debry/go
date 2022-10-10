@@ -1,9 +1,4 @@
-package star
-
-type Shape interface {
-	Perimeter() float64
-	Area() float64
-}
+package geom
 
 type Star struct {
 	length float64
