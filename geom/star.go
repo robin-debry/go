@@ -1,4 +1,4 @@
-package star
+package geom
 
 type Shape interface {
 	Perimeter() float64
