@@ -18,10 +18,10 @@ func TestPerimeter(t *testing.T) {
 		{"Perimeter 4", Hexagone{4}, 24},
 		{"Perimeter 12", Hexagone{12}, 72},
 		{"Perimeter 3, 4 and 6", Triangle{3, 4, 6, 0, 0}, 13},
+		{"perimeter 4 and 4", Star{4}, 50},
 	}
 
-	for i := 0; i < len(cases); i++ {
-		c := cases[i]
+	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
 			got := c.shape.Perimeter()
 			if got != c.want {
@@ -44,10 +44,10 @@ func TestArea(t *testing.T) {
 		{"Area 4", Hexagone{4}, 41.569219381653056},
 		{"Area 12", Hexagone{12}, 374.1229744348775},
 		{"Area 3 and 4", Triangle{0, 0, 0, 3, 4}, 6},
+		{"perimeter 4 and 4", Star{4}, 50},
 	}
 
-	for i := 0; i < len(cases); i++ {
-		c := cases[i]
+	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
 			got := c.shape.Area()
 			if fmt.Sprintf("%.5f", got) != fmt.Sprintf("%.5f", c.want) {
