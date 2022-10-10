@@ -1,6 +1,9 @@
 package geom
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestPerimeter(t *testing.T) {
 	cases := []struct {
@@ -37,6 +40,7 @@ func TestArea(t *testing.T) {
 		{"Area 5 and 3", Pentagone{5, 3}, 37.5},
 		{"Area 4 and 6", Rectangle{4, 6}, 24},
 		{"Area 7 and 9", Rectangle{7, 9}, 63},
+		{"Area 5.1", Circle{5.1}, 81.71282},
 		{"Area 4", Hexagone{4}, 41.569219381653056},
 		{"Area 12", Hexagone{12}, 374.1229744348775},
 		{"Area 3 and 4", Triangle{0, 0, 0, 3, 4}, 6},
@@ -46,8 +50,8 @@ func TestArea(t *testing.T) {
 		c := cases[i]
 		t.Run(c.name, func(t *testing.T) {
 			got := c.shape.Area()
-			if got != c.want {
-				t.Fatalf("got %f, want %f", got, c.want)
+			if fmt.Sprintf("%.5f", got) != fmt.Sprintf("%.5f", c.want) {
+				t.Fatalf("got %.5f, want %.5f", got, c.want)
 			}
 		})
 	}
