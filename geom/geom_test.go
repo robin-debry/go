@@ -2,7 +2,6 @@ package geom
 
 import "testing"
 
-
 func TestPerimeter(t *testing.T) {
 	cases := []struct {
 		name  string
@@ -13,6 +12,8 @@ func TestPerimeter(t *testing.T) {
 		{"perimeter 2.5 ", Circle{2.5}, 15.707963267948966},
 		{"perimeter 4 and 6", Rectangle{4, 6}, 20},
 		{"perimeter 7 and 9", Rectangle{7, 9}, 32},
+		{"Perimeter 4", Hexagone{4}, 24},
+		{"Perimeter 12", Hexagone{12}, 72},
 	}
 
 	for i := 0; i < len(cases); i++ {
@@ -26,7 +27,6 @@ func TestPerimeter(t *testing.T) {
 	}
 }
 
-
 func TestArea(t *testing.T) {
 	cases := []struct {
 		name  string
@@ -36,6 +36,8 @@ func TestArea(t *testing.T) {
 		{"Area 5 and 3", Pentagone{5, 3}, 37.5},
 		{"Area 4 and 6", Rectangle{4, 6}, 24},
 		{"Area 7 and 9", Rectangle{7, 9}, 63},
+		{"Area 4", Hexagone{4}, 41.569219381653056},
+		{"Area 12", Hexagone{12}, 374.1229744348775},
 	}
 
 	for i := 0; i < len(cases); i++ {
