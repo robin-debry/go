@@ -2,20 +2,6 @@ package geom
 
 import "testing"
 
-func TestPerimeter(t *testing.T) {
-	t.Run("perimeter 4 and 6", func(t *testing.T) {
-		got := Perimeter(Rectangle{4, 6})
-		if got != 20 {
-			t.Error("perimeter 4 and 6 is not 20")
-		}
-	})
-	t.Run("perimeter 7 and 9", func(t *testing.T) {
-		got := Perimeter(Rectangle{7, 9})
-		if got != 32 {
-			t.Error("perimeter 7 and 9 is not 32")
-		}
-	})
-}
 func TestCircle_Perimeter(t *testing.T) {
 	t.Run("Area 2.5 and 5.1", func(t *testing.T) {
 		c := Circle{
@@ -115,4 +101,26 @@ func TestPentagoneArea(t *testing.T) {
 		}
 	})
 
+}
+
+func TestPerimeter(t *testing.T) {
+	cases := []struct {
+		name  string
+		shape Shape
+		want  float64
+	}{
+		{"perimeter 5 ", Pentagone{5, 3}, 25},
+		{"perimeter 4 and 6", Rectangle{4, 6}, 20},
+		{"perimeter 7 and 9", Rectangle{7, 9}, 32},
+	}
+
+	for i := 0; i < len(cases); i++ {
+		c := cases[i]
+		t.Run(c.name, func(t *testing.T) {
+			got := c.shape.Perimeter()
+			if got != c.want {
+				t.Fatalf("got %f, want %f", got, c.want)
+			}
+		})
+	}
 }
